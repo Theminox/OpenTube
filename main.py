@@ -4,7 +4,7 @@ from pytube import Playlist, YouTube
 import platformdirs
 
 app = Flask(__name__)
-app.secret_key = '2133223142556753412'  # Necesario para usar flash messages
+app.secret_key = '2133223142556753412'  
 
 DOWNLOAD_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'downloads')
 if not os.path.exists(DOWNLOAD_FOLDER):
@@ -54,7 +54,7 @@ def download():
 
     if file_paths:
         flash('Descarga completada. Los archivos se descargarán automáticamente.')
-        # Redirige a la ruta para descargar el primer archivo
+        
         return redirect(url_for('download_file', filename=os.path.basename(file_paths[0])))
     else:
         flash('Error al descargar los videos.')
