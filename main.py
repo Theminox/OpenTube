@@ -1,9 +1,13 @@
 from flask import Flask, request, render_template, redirect, url_for, flash
 import os
 from pytube import Playlist, YouTube
+import platformdirs
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Necesario para usar flash messages
+app.secret_key = '2133223142556753412'  # Necesario para usar flash messages
+
+def get_download_path():
+    return platformdirs.user_downloads_dir()
 
 def download_youtube_video(video_url, download_path):
     if not os.path.exists(download_path):
@@ -42,7 +46,7 @@ def index():
 @app.route('/download', methods=['POST'])
 def download():
     url = request.form['url']
-    download_path = request.form['download_path']
+    download_path = get_download_path()
 
     if "playlist" in url.lower():
         results = download_youtube_playlist(url, download_path)
