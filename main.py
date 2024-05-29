@@ -64,6 +64,10 @@ def download():
 def download_file(filename):
     file_path = os.path.join(DOWNLOAD_FOLDER, filename)
 
+    if not os.path.exists(file_path):
+        flash('El archivo no se encuentra en el servidor.')
+        return redirect(url_for('index'))
+
     @after_this_request
     def remove_file(response):
         try:
