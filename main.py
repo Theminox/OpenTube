@@ -4,7 +4,7 @@ from pytube import Playlist, YouTube
 import platformdirs
 
 app = Flask(__name__)
-app.secret_key = '2133223142556753412'  
+app.secret_key = ''  
 
 DOWNLOAD_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'downloads')
 if not os.path.exists(DOWNLOAD_FOLDER):
