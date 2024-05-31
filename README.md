@@ -1,6 +1,6 @@
 
 
-# YouTube Video Downloader
+# YouTube Video Downloader / OpenTube
 
 Esta es una aplicación web desarrollada con Flask que permite a los usuarios descargar videos individuales o listas de reproducción de YouTube. Los videos se descargan en el servidor y luego se proporcionan para que los usuarios los descarguen en sus dispositivos locales.
 
@@ -22,9 +22,9 @@ Esta es una aplicación web desarrollada con Flask que permite a los usuarios de
 1. Clona este repositorio:
 
 
-git clone https://github.com/Theminox/YoutubeDownloader_Flask.git
+git clone https://github.com/Theminox/OpenTube.git
 
-cd YoutubeDownloader_Flask
+cd OpenTube
 
 
 2. Crea un entorno virtual y activa:
@@ -57,7 +57,7 @@ python app.py
 ## Estructura del Proyecto
 
 ```
-YoutubeDownloader_Flask/
+OpenTube/
 │
 ├── downloads/               # Directorio donde se almacenan temporalmente los videos descargados
 ├── templates/
